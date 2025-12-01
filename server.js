@@ -13,7 +13,9 @@ dotenv.config();
 const app = express();
 
 // MIDDLEWARES
-app.use(cors());
+app.use(cors({
+  origin: "*",
+}));
 app.use(express.json());
 
 // API ROUTES
