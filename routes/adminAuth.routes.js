@@ -24,7 +24,7 @@ router.post("/reset-password", resetPassword);
 router.get("/createfirstadmin", async (req, res) => {
   try {
     const bcrypt = (await import("bcryptjs")).default;
-    const Admin = (await import("../models/admin.model.js")).default;
+    const Admin = (await import("../models/Admin.js")).default;
 
     const hashedPassword = await bcrypt.hash("admin123", 10);
     await Admin.create({
@@ -37,6 +37,7 @@ router.get("/createfirstadmin", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 
 
 export default router;
