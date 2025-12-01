@@ -21,22 +21,7 @@ router.post("/login", loginAdmin);
 router.post("/forgot-password", forgotPassword);
 router.post("/verify-otp", verifyOtp);
 router.post("/reset-password", resetPassword);
-router.get("/createfirstadmin", async (req, res) => {
-  try {
-    const bcrypt = (await import("bcryptjs")).default;
-    const Admin = (await import("../models/Admin.js")).default;
 
-    const hashedPassword = await bcrypt.hash("admin123", 10);
-    await Admin.create({
-      email: "admin@sparsh.com",
-      password: hashedPassword,
-    });
-
-    res.json({ message: "Admin created successfully!" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
 
 
 
