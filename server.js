@@ -8,6 +8,7 @@ import appointmentRoutes from "./routes/appointment.routes.js";
 import serviceRoutes from "./routes/service.routes.js";
 import contactInquiryRoutes from "./routes/contactInquiry.routes.js";
 import galleryRoutes from "./routes/gallery.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
 
 dotenv.config();
 
@@ -26,6 +27,8 @@ app.use("/api/admin/appointments", appointmentRoutes);
 app.use("/api/admin/services", serviceRoutes);
 app.use("/api/admin/contactInquiry", contactInquiryRoutes);
 app.use("/api/admin/gallery", galleryRoutes);
+app.use("/api/admin/payments", paymentRoutes);
+
 
 // CONNECT DATABASE
 connectDB();
