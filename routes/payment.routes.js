@@ -1,9 +1,15 @@
 import express from "express";
-import { getAllPayments } from "../controllers/payment.controller.js";
+import {
+  getAllPayments,
+  getPaymentById,
+} from "../controllers/payment.controller.js";
 
 const router = express.Router();
 
-// GET /api/admin/payments
+// LIST PAYMENTS
 router.get("/", getAllPayments);
+
+// VIEW SINGLE PAYMENT
+router.get("/:id", getPaymentById);
 
 export default router;
