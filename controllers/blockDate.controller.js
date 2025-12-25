@@ -38,6 +38,7 @@ export const blockDate = async (req, res) => {
   }
 };
 
+
 /* ================= GET BLOCKED DATES ================= */
 export const getBlockedDates = async (req, res) => {
   try {

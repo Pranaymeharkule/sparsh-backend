@@ -10,6 +10,8 @@ import contactInquiryRoutes from "./routes/contactInquiry.routes.js";
 import galleryRoutes from "./routes/gallery.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import blockDateRoutes from "./routes/blockDate.routes.js";
+import doctorProfileRoutes from "./routes/doctorProfile.routes.js";
+
 
 
 dotenv.config();
@@ -31,6 +33,8 @@ app.use("/api/admin/contactInquiry", contactInquiryRoutes);
 app.use("/api/admin/gallery", galleryRoutes);
 app.use("/api/admin/payments", paymentRoutes);
 app.use("/api/admin/block-dates", blockDateRoutes);
+app.use("/api/admin", doctorProfileRoutes);
+
 
 
 // CONNECT DATABASE
