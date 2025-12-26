@@ -33,7 +33,7 @@ app.use("/api/admin/contactInquiry", contactInquiryRoutes);
 app.use("/api/admin/gallery", galleryRoutes);
 app.use("/api/admin/payments", paymentRoutes);
 app.use("/api/admin/block-dates", blockDateRoutes);
-app.use("/api/admin", doctorProfileRoutes);
+app.use("/api/admin/doctor-profile", doctorProfileRoutes);
 
 
 
