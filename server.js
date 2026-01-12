@@ -11,6 +11,8 @@ import galleryRoutes from "./routes/gallery.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import blockDateRoutes from "./routes/blockDate.routes.js";
 import doctorProfileRoutes from "./routes/doctorProfile.routes.js";
+import notificationRoutes from "./routes/notification.routes.js";
+
 
 
 
@@ -34,6 +36,8 @@ app.use("/api/admin/gallery", galleryRoutes);
 app.use("/api/admin/payments", paymentRoutes);
 app.use("/api/admin/block-dates", blockDateRoutes);
 app.use("/api/admin/doctor-profile", doctorProfileRoutes);
+app.use("/api/admin/notifications", notificationRoutes);
+
 
 
 
