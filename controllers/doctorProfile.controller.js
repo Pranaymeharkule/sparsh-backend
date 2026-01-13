@@ -60,3 +60,31 @@ export const resetProfilePassword = async (req, res) => {
 
   res.json({ success: true, message: "Password updated successfully" });
 };
+
+// UPDATE PROFILE
+export const updateDoctorProfile = async (req, res) => {
+  try {
+    const doctor = await DoctorProfile.findOne();
+    if (!doctor) {
+      return res.status(404).json({ success: false, message: "Profile not found" });
+    }
+
+    const { prefix, firstName, lastName, phone } = req.body;
+
+    doctor.prefix = prefix ?? doctor.prefix;
+    doctor.firstName = firstName ?? doctor.firstName;
+    doctor.lastName = lastName ?? doctor.lastName;
+    doctor.phone = phone ?? doctor.phone;
+
+    await doctor.save();
+
+    res.json({
+      success: true,
+      message: "Profile updated successfully",
+      data: doctor,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Failed to update profile" });
+  }
+};
+
